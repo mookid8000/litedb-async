@@ -35,6 +35,11 @@ namespace LiteDB.Async
             _backgroundThread.Start();
         }
 
+        /// <summary>
+        /// Gets the underlying <see cref="ILiteDatabase"/>. Useful to be able to access various operations not exposed by <see cref="LiteDatabaseAsync"/>
+        /// </summary>
+        public ILiteDatabase UnderlyingDatabase => _liteDB;
+
         public bool UtcDate
         {
             get => _liteDB.UtcDate;
